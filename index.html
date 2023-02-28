@@ -13,18 +13,27 @@ body {
   font-family: 'Permanent Marker', cursive;
 }
 
-/* .container {
-  position: relative;
+ .container {
+/*   position: relative;
   width: 100%;
   height: 100%;
   background-color: rgba(255, 0, 0, 0.3);
-  text-align:centered;
+  text-align:centered; */
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    top: 0;
+    color: white;
  
   
  }
 
   .container .image-container {
-    width: 50%;
+/*     width: 50%;
     text-align:centered;
     height: 100vh;
     padding-top: 45.347%;
@@ -32,10 +41,13 @@ body {
     top: 0;
     background-size: cover;
     background-image: url('https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202190.png');
-    background-color: rgba(0, 0, 255, 0.3);
-  } */
+    background-color: rgba(0, 0, 255, 0.3); */
   
-  .container {
+     opacity: 0;
+      font-size: 80px; margin: -20px 0;
+  } 
+  
+  .text-container {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -47,7 +59,7 @@ body {
     color: white;
    }
       
-   .container .image-container { 
+   .text-container .container { 
       opacity: 0;
       font-size: 30px; 
     }
