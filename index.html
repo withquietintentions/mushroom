@@ -1,37 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
   <head>
     <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
   crossorigin="anonymous"></script>
     <style>
+      // Color
 
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .container {
   position: relative;
   width: 100%;
-  height: 100vh; 
-  display: block;
-  top:100px;
-  background-color:lightblue;
-  
+  height: 1500px;
  }
 
-.container .image-container {
+  .container .image-container {
+    width: 100%;
+    height: 0;
+    padding-top: 45.347%;
+    position: sticky;
+    top: 0;
+    background-size: cover;
+    background-image: url('https://drive.google.com/uc?id=1vtaubItASKilyvb5sgQO7D7gjAQ7xo0i');
+  }
+  
+  .text-container {
     width: 100%;
     height: 100%;
-  object-fit: cover;
-  position: sticky; 
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202001.png');
-  }
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    top: 0;
+    color: white;
+   }
+      
+   .text-container .subtitle { 
+      opacity: 0;
+      font-size: 30px; 
+    }
+      
+   .text-container .title { 
+      opacity: 0;
+      font-size: 80px; margin: -20px 0;
+    }
+  
 
     </style>
 
@@ -40,507 +59,104 @@
   <body>
 
         <!-- Blocking page render before all image loads is not a good idea -->
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202001.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202002.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202003.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202004.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202005.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202006.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202007.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202008.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202009.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202010.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202011.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202012.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202013.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202014.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202015.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202016.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202017.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202018.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202019.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202020.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202021.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202022.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202023.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202024.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202025.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202026.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202027.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202028.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202029.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202030.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202031.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202032.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202033.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202034.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202035.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202036.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202037.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202038.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202039.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202040.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202041.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202042.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202043.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202044.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202045.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202046.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202047.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202048.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202049.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202050.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202051.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202052.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202053.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202054.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202055.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202056.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202057.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202058.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202059.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202060.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202061.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202062.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202063.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202064.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202065.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202066.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202067.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202068.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202069.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202070.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202071.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202072.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202073.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202074.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202075.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202076.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202077.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202078.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202079.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202080.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202081.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202082.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202083.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202084.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202085.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202086.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202087.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202088.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202089.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202090.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202091.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202092.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202093.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202094.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202095.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202096.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202097.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202098.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202099.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202100.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202101.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202102.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202103.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202104.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202105.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202106.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202107.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202108.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202109.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202110.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202111.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202112.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202113.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202114.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202115.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202116.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202117.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202118.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202119.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202120.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202121.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202122.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202123.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202124.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202125.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202126.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202127.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202128.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202129.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202130.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202131.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202132.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202133.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202134.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202135.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202136.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202137.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202138.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202139.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202140.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202141.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202142.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202143.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202144.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202145.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202146.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202147.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202148.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202149.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202150.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202151.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202152.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202153.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202154.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202155.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202156.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202157.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202158.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202159.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202160.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202161.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202162.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202163.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202164.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202165.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202166.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202167.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202168.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202169.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202170.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202171.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202172.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202173.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202174.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202175.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202176.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202177.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202178.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202179.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202180.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202181.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202182.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202183.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202184.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202185.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202186.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202187.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202188.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202189.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202190.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202191.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202192.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202193.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202194.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202195.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202196.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202197.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202198.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202199.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202200.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202201.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202202.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202203.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202204.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202205.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202206.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202207.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202208.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202209.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202210.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202211.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202212.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202213.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202214.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202215.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202216.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202217.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202218.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202219.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202220.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202221.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202222.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202223.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202224.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202225.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202226.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202227.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202228.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202229.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202230.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202231.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202232.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202233.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202234.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202235.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202236.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202237.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202238.png'>
-<link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202239.png'>
-
-
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202001.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202010.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202020.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202030.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202040.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202050.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202060.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202070.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202080.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202090.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202100.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202110.png''>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202120.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202130.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202140.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202150.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202160.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202170.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202180.png'>
+    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202190.png'>
 <div class='container'>
   <div class='image-container'></div>
+  <div class='text-container'>
+    <div class='subtitle' id='line1'>These lines float in one by one</div>
+    <div class='title' id='line2'>How to make</div>
+    <div class='title' id='line3'>Moving background</div>
+    <div class='subtitle' id='line4'>Disappear again when scroll top</div>
+  </div>
 </div>
   </body>
   <script>
     // Images asset
 const fruitImages = {
-1:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202001.png',
-2:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202002.png',
-3:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202003.png',
-4:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202004.png',
-5:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202005.png',
-6:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202006.png',
-7:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202007.png',
-8:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202008.png',
-9:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202009.png',
-10:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202010.png',
-11:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202011.png',
-12:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202012.png',
-13:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202013.png',
-14:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202014.png',
-15:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202015.png',
-16:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202016.png',
-17:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202017.png',
-18:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202018.png',
-19:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202019.png',
-20:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202020.png',
-21:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202021.png',
-22:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202022.png',
-23:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202023.png',
-24:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202024.png',
-25:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202025.png',
-26:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202026.png',
-27:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202027.png',
-28:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202028.png',
-29:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202029.png',
-30:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202030.png',
-31:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202031.png',
-32:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202032.png',
-33:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202033.png',
-34:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202034.png',
-35:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202035.png',
-36:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202036.png',
-37:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202037.png',
-38:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202038.png',
-39:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202039.png',
-40:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202040.png',
-41:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202041.png',
-42:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202042.png',
-43:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202043.png',
-44:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202044.png',
-45:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202045.png',
-46:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202046.png',
-47:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202047.png',
-48:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202048.png',
-49:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202049.png',
-50:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202050.png',
-51:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202051.png',
-52:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202052.png',
-53:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202053.png',
-54:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202054.png',
-55:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202055.png',
-56:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202056.png',
-57:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202057.png',
-58:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202058.png',
-59:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202059.png',
-60:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202060.png',
-61:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202061.png',
-62:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202062.png',
-63:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202063.png',
-64:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202064.png',
-65:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202065.png',
-66:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202066.png',
-67:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202067.png',
-68:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202068.png',
-69:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202069.png',
-70:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202070.png',
-71:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202071.png',
-72:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202072.png',
-73:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202073.png',
-74:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202074.png',
-75:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202075.png',
-76:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202076.png',
-77:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202077.png',
-78:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202078.png',
-79:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202079.png',
-80:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202080.png',
-81:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202081.png',
-82:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202082.png',
-83:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202083.png',
-84:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202084.png',
-85:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202085.png',
-86:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202086.png',
-87:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202087.png',
-88:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202088.png',
-89:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202089.png',
-90:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202090.png',
-91:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202091.png',
-92:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202092.png',
-93:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202093.png',
-94:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202094.png',
-95:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202095.png',
-96:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202096.png',
-97:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202097.png',
-98:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202098.png',
-99:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202099.png',
-100:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202100.png',
-101:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202101.png',
-102:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202102.png',
-103:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202103.png',
-104:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202104.png',
-105:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202105.png',
-106:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202106.png',
-107:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202107.png',
-108:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202108.png',
-109:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202109.png',
-110:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202110.png',
-111:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202111.png',
-112:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202112.png',
-113:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202113.png',
-114:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202114.png',
-115:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202115.png',
-116:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202116.png',
-117:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202117.png',
-118:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202118.png',
-119:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202119.png',
-120:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202120.png',
-121:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202121.png',
-122:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202122.png',
-123:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202123.png',
-124:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202124.png',
-125:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202125.png',
-126:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202126.png',
-127:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202127.png',
-128:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202128.png',
-129:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202129.png',
-130:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202130.png',
-131:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202131.png',
-132:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202132.png',
-133:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202133.png',
-134:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202134.png',
-135:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202135.png',
-136:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202136.png',
-137:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202137.png',
-138:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202138.png',
-139:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202139.png',
-140:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202140.png',
-141:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202141.png',
-142:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202142.png',
-143:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202143.png',
-144:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202144.png',
-145:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202145.png',
-146:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202146.png',
-147:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202147.png',
-148:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202148.png',
-149:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202149.png',
-150:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202150.png',
-151:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202151.png',
-152:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202152.png',
-153:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202153.png',
-154:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202154.png',
-155:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202155.png',
-156:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202156.png',
-157:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202157.png',
-158:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202158.png',
-159:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202159.png',
-160:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202160.png',
-161:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202161.png',
-162:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202162.png',
-163:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202163.png',
-164:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202164.png',
-165:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202165.png',
-166:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202166.png',
-167:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202167.png',
-168:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202168.png',
-169:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202169.png',
-170:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202170.png',
-171:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202171.png',
-172:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202172.png',
-173:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202173.png',
-174:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202174.png',
-175:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202175.png',
-176:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202176.png',
-177:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202177.png',
-178:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202178.png',
-179:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202179.png',
-180:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202180.png',
-181:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202181.png',
-182:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202182.png',
-183:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202183.png',
-184:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202184.png',
-185:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202185.png',
-186:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202186.png',
-187:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202187.png',
-188:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202188.png',
-189:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202189.png',
-190:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202190.png',
-191:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202191.png',
-192:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202192.png',
-193:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202193.png',
-194:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202194.png',
-195:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202195.png',
-196:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202196.png',
-197:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202197.png',
-198:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202198.png',
-199:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202199.png',
-200:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202200.png',
-201:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202201.png',
-202:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202202.png',
-203:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202203.png',
-204:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202204.png',
-205:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202205.png',
-206:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202206.png',
-207:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202207.png',
-208:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202208.png',
-209:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202209.png',
-210:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202210.png',
-211:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202211.png',
-212:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202212.png',
-213:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202213.png',
-214:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202214.png',
-215:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202215.png',
-216:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202216.png',
-217:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202217.png',
-218:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202218.png',
-219:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202219.png',
-220:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202220.png',
-221:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202221.png',
-222:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202222.png',
-223:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202223.png',
-224:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202224.png',
-225:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202225.png',
-226:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202226.png',
-227:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202227.png',
-228:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202228.png',
-229:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202229.png',
-230:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202230.png',
-231:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202231.png',
-232:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202232.png',
-233:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202233.png',
-234:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202234.png',
-235:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202235.png',
-236:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202236.png',
-237:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202237.png',
-238:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202238.png',
-239:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202239.png',
+    1:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202001.png',
+    2:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202010.png',
+    3:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202020.png',
+    4:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202030.png',
+    5:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202040.png',
+    6:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202050.png',
+    7:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202060.png',
+    8:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202070.png',
+    9:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202080.png',
+    10:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202090.png',
+    11:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202100.png',
+    12:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202110.png',
+    13:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202120.png',
+    14:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202130.png',
+    15:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202140.png',
+    16:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202150.png',
+    17:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202160.png',
+    18:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202170.png',
+    19:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202180.png',
+    20:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202190.png',
+}
+// Text style
+const textStyle = {
+  1: {opacity: 0, transform: '0px'},
+  2: {opacity: 0, transform: '0px'},
+  3: {opacity: 0, transform: '0px'},
+  4: {opacity: 0, transform: '0px'},
+  5: {opacity: .25, transform: '15px'},
+  6: {opacity: .5, transform: '10px'},
+  7: {opacity: .75, transform: '5px'},
+  8: {opacity: 1, transform: '0px'},
+  9: {opacity: 1, transform: '0px'},
+  10: {opacity: 1, transform: '0px'},
+  11: {opacity: 1, transform: '0px'},
+  12: {opacity: 1, transform: '0px'},
+  13: {opacity: 1, transform: '0px'},
+  14: {opacity: 1, transform: '0px'},
+  15: {opacity: 1, transform: '0px'},
+  16: {opacity: 1, transform: '0px'},
+  17: {opacity: 1, transform: '0px'},
+  18: {opacity: 1, transform: '0px'},
+  19: {opacity: 1, transform: '0px'},
+  20: {opacity: 1, transform: '0px'},
 }
 
 // Global variable to control the scrolling behavior
-const step = 5; // For each 10px, change an image
+const step = 30; // For each 30px, change an image
 
 function trackScrollPosition() {
   const y = window.scrollY;
-  console.log(y);
-  const label = Math.min(Math.floor(y/5) + 1, 239);
-  console.log("label: " + label);
- // const label = Math.round(1, 239)
+  const label = Math.min(Math.floor(y/30) + 1, 20);
   const imageToUse = fruitImages[label];
   // Change the background image
   $('.image-container').css('background-image', `url('${imageToUse}')`);
+  // Change the text style
+  const textStep = 2;
+  const textStyleToUseLine1 = textStyle[label];
+  const textStyleToUseLine2 = textStyle[Math.min(Math.max(label - textStep, 1), 20)];
+  const textStyleToUseLine3 = textStyle[Math.min(Math.max(label - textStep * 2, 1),20)];
+  const textStyleToUseLine4 = textStyle[Math.min(Math.max(label - textStep * 3, 1),20)];
+  $('#line1').css({'opacity': textStyleToUseLine1.opacity, 'transform': `translateY(${textStyleToUseLine1.transform})`});
+  $('#line2').css({'opacity': textStyleToUseLine2.opacity, 'transform': `translateY(${textStyleToUseLine2.transform})`});
+  $('#line3').css({'opacity': textStyleToUseLine3.opacity, 'transform': `translateY(${textStyleToUseLine3.transform})`});
+  $('#line4').css({'opacity': textStyleToUseLine4.opacity, 'transform': `translateY(${textStyleToUseLine4.transform})`});
+
 }
 
 $(document).ready(()=>{
