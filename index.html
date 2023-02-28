@@ -1,187 +1,50 @@
 
 <html>
+ 
   <head>
     <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
   crossorigin="anonymous"></script>
     <style>
-    
+      html {
+  height: 100vh;
+}
 
 body {
-  margin: 0;
-  font-family: 'Permanent Marker', cursive;
+  height: 500vh;
+  background: #000;
 }
 
- .container {
-/*   position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 0, 0, 0.3);
-  text-align:centered; */
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    top: 0;
-    color: white;
- 
-  
- }
+canvas {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
+      } </style>
+      </head>
+      <body>
+       <canvas id="hero-lightpass" />
+      </body>
+<script>
+const html = document.documentElement;
+const canvas = document.getElementById("hero-lightpass");
+const context = canvas.getContext("2d");
 
-  .container .image-container {
-   width: 100%;
-    text-align:centered;
-    height: 100vh;
-    padding-top: 45.347%;
-    position: sticky;
-    top: 0;
-    background-size: cover;
-    background-image: url('https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202190.png');
-    background-color: rgba(0, 0, 255, 0.3); 
-  
-    margin: -20px 0;
-  } 
-  
-  .text-container {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    top: 0;
-    color: white;
-   }
-      
-   .text-container .container { 
-      opacity: 0;
-      font-size: 30px; 
-    }
-      
-   .text-container .title { 
-      opacity: 0;
-      font-size: 80px; margin: -20px 0;
-    }
-  
+const frameCount = 148;
+const currentFrame = index => (
+  `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${index.toString().padStart(4, '0')}.jpg`
+)
 
-    </style>
+const preloadImages = () => {
+  for (let i = 1; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+  }
+};
 
-  </head>
-  
-  <body>
-
-        <!-- Blocking page render before all image loads is not a good idea -->
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202001.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202010.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202020.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202030.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202040.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202050.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202060.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202070.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202080.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202090.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202100.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202110.png''>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202120.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202130.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202140.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202150.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202160.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202170.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202180.png'>
-    <link rel="preload" as="image" href='https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202190.png'>
-<div class='container'>
-  <div class='image-container'></div>
-  <div class='text-container'>
-    <div class='subtitle' id='line1'>These lines float in one by one</div>
-    <div class='title' id='line2'>How to make</div>
-    <div class='title' id='line3'>Moving background</div>
-    <div class='subtitle' id='line4'>Disappear again when scroll top</div>
-  </div>
-</div>
-  </body>
-  <script>
-    // Images asset
-const fruitImages = {
-    1:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202001.png',
-    2:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202010.png',
-    3:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202020.png',
-    4:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202030.png',
-    5:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202040.png',
-    6:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202050.png',
-    7:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202060.png',
-    8:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202070.png',
-    9:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202080.png',
-    10:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202090.png',
-    11:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202100.png',
-    12:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202110.png',
-    13:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202120.png',
-    14:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202130.png',
-    15:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202140.png',
-    16:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202150.png',
-    17:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202160.png',
-    18:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202170.png',
-    19:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202180.png',
-    20:'https://raw.githubusercontent.com/foragervr/foragervr/main/Opening%20Sequence%202190.png',
-}
-// Text style
-const textStyle = {
-  1: {opacity: 0, transform: '0px'},
-  2: {opacity: 0, transform: '0px'},
-  3: {opacity: 0, transform: '0px'},
-  4: {opacity: 0, transform: '0px'},
-  5: {opacity: .25, transform: '15px'},
-  6: {opacity: .5, transform: '10px'},
-  7: {opacity: .75, transform: '5px'},
-  8: {opacity: 1, transform: '0px'},
-  9: {opacity: 1, transform: '0px'},
-  10: {opacity: 1, transform: '0px'},
-  11: {opacity: 1, transform: '0px'},
-  12: {opacity: 1, transform: '0px'},
-  13: {opacity: 1, transform: '0px'},
-  14: {opacity: 1, transform: '0px'},
-  15: {opacity: 1, transform: '0px'},
-  16: {opacity: 1, transform: '0px'},
-  17: {opacity: 1, transform: '0px'},
-  18: {opacity: 1, transform: '0px'},
-  19: {opacity: 1, transform: '0px'},
-  20: {opacity: 1, transform: '0px'},
-}
-
-// Global variable to control the scrolling behavior
-const step = 30; // For each 30px, change an image
-
-function trackScrollPosition() {
-  const y = window.scrollY;
-  const label = Math.min(Math.floor(y/30) + 1, 20);
-  const imageToUse = fruitImages[label];
-  // Change the background image
-  $('.image-container').css('background-image', `url('${imageToUse}')`);
-  // Change the text style
-  const textStep = 2;
-  const textStyleToUseLine1 = textStyle[label];
-  const textStyleToUseLine2 = textStyle[Math.min(Math.max(label - textStep, 1), 20)];
-  const textStyleToUseLine3 = textStyle[Math.min(Math.max(label - textStep * 2, 1),20)];
-  const textStyleToUseLine4 = textStyle[Math.min(Math.max(label - textStep * 3, 1),20)];
-  $('#line1').css({'opacity': textStyleToUseLine1.opacity, 'transform': `translateY(${textStyleToUseLine1.transform})`});
-  $('#line2').css({'opacity': textStyleToUseLine2.opacity, 'transform': `translateY(${textStyleToUseLine2.transform})`});
-  $('#line3').css({'opacity': textStyleToUseLine3.opacity, 'transform': `translateY(${textStyleToUseLine3.transform})`});
-  $('#line4').css({'opacity': textStyleToUseLine4.opacity, 'transform': `translateY(${textStyleToUseLine4.transform})`});
-
-}
-
-$(document).ready(()=>{
-  // register an event listener on window
-  $(window).scroll(()=>{
-    // We don't need to use 'event' as the scroll exist in window
-    trackScrollPosition();
-  })
-})
   </script>
+      
 </html>
